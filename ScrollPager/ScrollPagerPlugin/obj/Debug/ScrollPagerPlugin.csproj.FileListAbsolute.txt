@@ -1,0 +1,8 @@
+H:\GitRepositories\ScriptSharpScrollPagerPlugin\ScrollPagerPlugin\bin\Debug\ScrollPagerPlugin.xml
+H:\GitRepositories\ScriptSharpScrollPagerPlugin\ScrollPagerPlugin\obj\Debug\ResolveAssemblyReference.cache
+H:\GitRepositories\ScriptSharpScrollPagerPlugin\ScrollPagerPlugin\obj\Debug\ScrollPagerPlugin.dll
+H:\GitRepositories\ScriptSharpScrollPagerPlugin\ScrollPagerPlugin\obj\Debug\ScrollPagerPlugin.pdb
+E:\OnlineRepositories\Me\The-Heap\ScrollPager\ScrollPagerPlugin\bin\Debug\ScrollPagerPlugin.xml
+E:\OnlineRepositories\Me\The-Heap\ScrollPager\ScrollPagerPlugin\obj\Debug\ResolveAssemblyReference.cache
+E:\OnlineRepositories\Me\The-Heap\ScrollPager\ScrollPagerPlugin\obj\Debug\ScrollPagerPlugin.dll
+E:\OnlineRepositories\Me\The-Heap\ScrollPager\ScrollPagerPlugin\obj\Debug\ScrollPagerPlugin.pdb
