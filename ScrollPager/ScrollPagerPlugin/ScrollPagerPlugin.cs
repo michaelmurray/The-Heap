@@ -75,10 +75,11 @@ public static class ScrollPagerPluginPlugin
 
 											}
 
+											//line-height:
 											//Create slider item 
 											int sliderItemThumbPosition = Math.Round((options.currentPage - 1)*sliderItemHeight);
 											double sliderItemThumbHeight = Math.Round((sliderItemHeight - 3));
-											string sliderItem = "<LI class='thumb' style='top:" + sliderItemThumbPosition + "; height:" + sliderItemThumbHeight + "px;'><A class='sliderThumb' href='#' rel='" + i + "'>" + options.currentPage + "</A>";
+											string sliderItem = "<LI class='thumb' style='top:" + sliderItemThumbPosition + "; height:" + sliderItemThumbHeight + "px;'><span class='sliderThumb' style='line-height:" + sliderItemThumbHeight + "px;' href='#' rel='" + i + "'>" + options.currentPage + "</span>";
 											pageNav += sliderItem;
 											pageNav += "</LI></UL>";
 
@@ -115,7 +116,6 @@ public static class ScrollPagerPluginPlugin
 																					//hide and show relevant links				
 																					selector.Children().Hide();
 																					selector.Find(".page" + clickedLink).Show();
-																					selector.Find(".sliderThumb").Text(clickedLink);
 		                           		                                      	};
 
 										//Action<jQueryObject> selectPageItem = delegate(jQueryObject pageItem)
@@ -139,17 +139,18 @@ public static class ScrollPagerPluginPlugin
 											Number candidatePos = Math.Max(0, (iPosition.Start + ((oEvent.PageY) - iMouse.Start)));
 											iPosition.Now = Math.Round((candidatePos > maxPos) ? maxPos : candidatePos);
 											candidatePageIndex = Math.Round(iPosition.Now / oThumb.GetHeight());
-											oThumb.CSS("top", iPosition.Now.ToString() + "px"); ;
+											oThumb.CSS("top", iPosition.Now.ToString() + "px");
+											oThumb.Children().First().Text((candidatePageIndex + 1).ToString());
 										};
 
 										jQueryEventHandler end = null; 
 										end = delegate(jQueryEvent oEvent)
-										{
-											jQuery.Document.Unbind("mousemove", drag);
-											jQuery.Document.Unbind("mouseup", end);
-											oThumb.Die("mouseup", end);
-											selectPageItem(jQuery.FromElement(pageItemCollection[candidatePageIndex]));
-										};
+										      	{
+													jQuery.Document.Unbind("mousemove", drag);
+													jQuery.Document.Unbind("mouseup", end);
+													oThumb.Die("mouseup", end);
+													selectPageItem(jQuery.FromElement(pageItemCollection[candidatePageIndex]));
+												};
 
 										jQueryEventHandler start = delegate(jQueryEvent oEvent)
 										{

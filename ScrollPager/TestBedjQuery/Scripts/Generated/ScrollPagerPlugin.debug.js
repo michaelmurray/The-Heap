@@ -51,7 +51,7 @@ $.fn.scrollPagerPlugin = function ScrollPagerPluginPlugin$scrollPagerPlugin(cust
             }
             var sliderItemThumbPosition = Math.round((options.currentPage - 1) * sliderItemHeight);
             var sliderItemThumbHeight = Math.round((sliderItemHeight - 3));
-            var sliderItem = "<LI class='thumb' style='top:" + sliderItemThumbPosition + '; height:' + sliderItemThumbHeight + "px;'><A class='sliderThumb' href='#' rel='" + i + "'>" + options.currentPage + '</A>';
+            var sliderItem = "<LI class='thumb' style='top:" + sliderItemThumbPosition + '; height:' + sliderItemThumbHeight + "px;'><span class='sliderThumb' style='line-height:" + sliderItemThumbHeight + "px;' href='#' rel='" + i + "'>" + options.currentPage + '</span>';
             pageNav += sliderItem;
             pageNav += '</LI></UL>';
             if (!options.holder) {
@@ -74,7 +74,6 @@ $.fn.scrollPagerPlugin = function ScrollPagerPluginPlugin$scrollPagerPlugin(cust
             pageItem.parent('li').addClass('currentPage');
             selector.children().hide();
             selector.find('.page' + clickedLink).show();
-            selector.find('.sliderThumb').text(clickedLink);
         };
         var selectPageItemHandler = function(pageItemClickedEvent) {
             var pageItem = $(pageItemClickedEvent.currentTarget);
@@ -88,6 +87,7 @@ $.fn.scrollPagerPlugin = function ScrollPagerPluginPlugin$scrollPagerPlugin(cust
             iPosition.now = Math.round((candidatePos > maxPos) ? maxPos : candidatePos);
             candidatePageIndex = Math.round(iPosition.now / oThumb.height());
             oThumb.css('top', iPosition.now.toString() + 'px');
+            oThumb.children().first().text((candidatePageIndex + 1).toString());
         };
         var end = null;
         end = function(oEvent) {

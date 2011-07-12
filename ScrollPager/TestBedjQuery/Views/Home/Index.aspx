@@ -164,12 +164,14 @@
 		}
 
 		.sliderThumb
-		{
+		{	
+			display:inline-block; 
 			width:100%;
 			height:100%;
 			text-align:center;
-			vertical-align:middle;
 			text-decoration:none;
+			font-weight:bold;
+			color:White;
 		}
 
 	</style>
