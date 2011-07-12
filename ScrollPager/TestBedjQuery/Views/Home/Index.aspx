@@ -6,6 +6,7 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="StylesContent" runat="server">
     	<style type="text/css">
+		
 		.ThumbnailItem
 		{
 			float:left;
@@ -89,49 +90,70 @@
 
 		.scrollbar
 		{
-			float:right;
-			border-left:1px solid black;
-			background-color:Ivory;
 			width:30px;
+			float:right;
+			border-left-width:1px;
+			border-left-style: solid;
+			border-left-color: black;
+			background-color:Ivory;
 			height:100%;
 			position:relative;
+			overflow:hidden;
+		}
+
+		ul.scrollbar
+		{
+			padding: 0px;
+			margin:  0px;
 		}
 
 		.pageMe
 		{
 			float: left; 
-			margin-right: 30px; /*same as the pageNav width*/
+			/*margin-right: 30px; same as the pageNav width*/
 		}
 
 		.currentPage
 		{
-			border-bottom:1px solid #999999;
-			width:100%;
+
 			clear:both; 
-			background-color:Blue;
+			left:0px;
+			border-bottom-width:1px;
+			border-bottom-style: solid;
+			border-bottom-color: #999999;
+			background-color:blue;
 			z-index:0;
 
+		}
+
+		li.pageItem 
+		{
+			margin-left: 0px
 		}
 
 		.pageItem
 		{
-			border-bottom:1px solid #999999;
 			width:100%;
 			clear:both; 
+			left:0px;
+			border-bottom-width:1px;
+			border-bottom-style: solid;
+			border-bottom-color: #999999;
 			z-index:0;
+			display: block;
 		}
 
 		.thumb
 		{
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:100%;
 			border:1px solid #999999;
 			border-radius: 3px;
 			background-color:Grey;
-			width:90%;
-			margin-left:auto;
-			margin-right:auto;
-			position:absolute;
-			top:0px;
 			z-index:10;
+			display:inherit;
 
 		}
 
@@ -145,6 +167,9 @@
 		{
 			width:100%;
 			height:100%;
+			text-align:center;
+			vertical-align:middle;
+			text-decoration:none;
 		}
 
 	</style>
@@ -197,7 +222,9 @@
 					totalRecords: 23,
 					viewport: "",
 					pageHeight: 200,
-					onPageChanged: function (o, e) { window.alert("Selected Page: " + e.selectedPage); },
+					onPageChanged: function (o, e)
+					{ //window.alert("Selected Page: " + e.selectedPage); 
+					},
 					scroll: null
 				});
 			});

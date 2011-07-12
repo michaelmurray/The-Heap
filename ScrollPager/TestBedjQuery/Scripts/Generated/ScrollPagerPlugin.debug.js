@@ -49,7 +49,9 @@ $.fn.scrollPagerPlugin = function ScrollPagerPluginPlugin$scrollPagerPlugin(cust
                     pageNav += "<LI class='pageNav" + i + " pageItem' sizcache='4' sizset='14'><A class='sliderPage' href='#' rel='" + i + "'></A>";
                 }
             }
-            var sliderItem = "<LI class='thumb' sizcache='4' sizset='13' style='top:" + (options.currentPage - 1) * sliderItemHeight + '; height:' + (sliderItemHeight - 3) + "'><A class='sliderThumb' href='#' rel='" + i + "'></A>";
+            var sliderItemThumbPosition = Math.round((options.currentPage - 1) * sliderItemHeight);
+            var sliderItemThumbHeight = Math.round((sliderItemHeight - 3));
+            var sliderItem = "<LI class='thumb' style='top:" + sliderItemThumbPosition + '; height:' + sliderItemThumbHeight + "px;'><div class='sliderThumb'><A class='sliderThumb' href='#' rel='" + i + "'>" + options.currentPage + '</A></div>';
             pageNav += sliderItem;
             pageNav += '</LI></UL>';
             if (!options.holder) {
@@ -82,9 +84,9 @@ $.fn.scrollPagerPlugin = function ScrollPagerPluginPlugin$scrollPagerPlugin(cust
         };
         var drag = function(oEvent) {
             var candidatePos = Math.max(0, (iPosition.start + (oEvent.pageY - iMouse.start)));
-            iPosition.now = (candidatePos > maxPos) ? maxPos : candidatePos;
+            iPosition.now = Math.round((candidatePos > maxPos) ? maxPos : candidatePos);
             candidatePageIndex = Math.round(iPosition.now / oThumb.height());
-            oThumb.css('top', iPosition.now.toString());
+            oThumb.css('top', iPosition.now.toString() + 'px');
         };
         var end = null;
         end = function(oEvent) {
@@ -92,6 +94,7 @@ $.fn.scrollPagerPlugin = function ScrollPagerPluginPlugin$scrollPagerPlugin(cust
             $(document).unbind('mouseup', end);
             oThumb.die('mouseup', end);
             selectPageItem($(pageItemCollection[candidatePageIndex]));
+            oThumb.text(candidatePageIndex.toString());
         };
         var start = function(oEvent) {
             iMouse.start = oEvent.pageY;

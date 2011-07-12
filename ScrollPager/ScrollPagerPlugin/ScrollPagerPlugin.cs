@@ -76,7 +76,9 @@ public static class ScrollPagerPluginPlugin
 											}
 
 											//Create slider item 
-											string sliderItem = "<LI class='thumb' sizcache='4' sizset='13' style='top:" + (options.currentPage - 1) * sliderItemHeight + "; height:" + (sliderItemHeight - 3) + "'><A class='sliderThumb' href='#' rel='" + i + "'></A>";
+											int sliderItemThumbPosition = Math.Round((options.currentPage - 1)*sliderItemHeight);
+											double sliderItemThumbHeight = Math.Round((sliderItemHeight - 3));
+											string sliderItem = "<LI class='thumb' style='top:" + sliderItemThumbPosition + "; height:" + sliderItemThumbHeight + "px;'><div class='sliderThumb'><A class='sliderThumb' href='#' rel='" + i + "'>" + options.currentPage + "</A></div>";
 											pageNav += sliderItem;
 											pageNav += "</LI></UL>";
 
@@ -134,9 +136,9 @@ public static class ScrollPagerPluginPlugin
 										jQueryEventHandler drag = delegate(jQueryEvent oEvent)
 										{
 											Number candidatePos = Math.Max(0, (iPosition.Start + ((oEvent.PageY) - iMouse.Start)));
-											iPosition.Now = (candidatePos > maxPos) ? maxPos : candidatePos;
+											iPosition.Now = Math.Round((candidatePos > maxPos) ? maxPos : candidatePos);
 											candidatePageIndex = Math.Round(iPosition.Now / oThumb.GetHeight());
-											oThumb.CSS("top", iPosition.Now.ToString()); ;
+											oThumb.CSS("top", iPosition.Now.ToString() + "px"); ;
 										};
 
 										jQueryEventHandler end = null; 
@@ -146,6 +148,7 @@ public static class ScrollPagerPluginPlugin
 											jQuery.Document.Unbind("mouseup", end);
 											oThumb.Die("mouseup", end);
 											selectPageItem(jQuery.FromElement(pageItemCollection[candidatePageIndex]));
+											//oThumb.Text(candidatePageIndex.ToString());
 										};
 
 										jQueryEventHandler start = delegate(jQueryEvent oEvent)
