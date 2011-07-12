@@ -78,7 +78,7 @@ public static class ScrollPagerPluginPlugin
 											//Create slider item 
 											int sliderItemThumbPosition = Math.Round((options.currentPage - 1)*sliderItemHeight);
 											double sliderItemThumbHeight = Math.Round((sliderItemHeight - 3));
-											string sliderItem = "<LI class='thumb' style='top:" + sliderItemThumbPosition + "; height:" + sliderItemThumbHeight + "px;'><div class='sliderThumb'><A class='sliderThumb' href='#' rel='" + i + "'>" + options.currentPage + "</A></div>";
+											string sliderItem = "<LI class='thumb' style='top:" + sliderItemThumbPosition + "; height:" + sliderItemThumbHeight + "px;'><A class='sliderThumb' href='#' rel='" + i + "'>" + options.currentPage + "</A>";
 											pageNav += sliderItem;
 											pageNav += "</LI></UL>";
 
@@ -115,6 +115,7 @@ public static class ScrollPagerPluginPlugin
 																					//hide and show relevant links				
 																					selector.Children().Hide();
 																					selector.Find(".page" + clickedLink).Show();
+																					selector.Find(".sliderThumb").Text(clickedLink);
 		                           		                                      	};
 
 										//Action<jQueryObject> selectPageItem = delegate(jQueryObject pageItem)
@@ -148,7 +149,6 @@ public static class ScrollPagerPluginPlugin
 											jQuery.Document.Unbind("mouseup", end);
 											oThumb.Die("mouseup", end);
 											selectPageItem(jQuery.FromElement(pageItemCollection[candidatePageIndex]));
-											//oThumb.Text(candidatePageIndex.ToString());
 										};
 
 										jQueryEventHandler start = delegate(jQueryEvent oEvent)

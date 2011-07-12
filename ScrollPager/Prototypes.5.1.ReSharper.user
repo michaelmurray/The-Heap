@@ -9,32 +9,44 @@
   <RecentFiles>
     <RecentFiles>
       <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Scripts/f:scrollpager.js" caret="544" fromTop="0" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Scripts/f:jquery-1.4.4.min.js" caret="20888" fromTop="16" />
-      <File id="83C3E338-7347-42D7-8F8E-C5C8D4BBE8DB/f:ScrollPagerPlugin.cs" caret="0" fromTop="0" />
       <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Controllers/f:HomeController.cs" caret="153" fromTop="8" />
       <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Controllers/f:AccountController.cs" caret="0" fromTop="0" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Shared/f:Site.Master" caret="814" fromTop="18" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2418" fromTop="7" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Shared/f:Site.Master" caret="561" fromTop="9" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Scripts/f:jquery-1.4.4.min.js" caret="1941" fromTop="19" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2844" fromTop="28" />
+      <File id="83C3E338-7347-42D7-8F8E-C5C8D4BBE8DB/f:ScrollPagerPlugin.cs" caret="5038" fromTop="24" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Scripts/d:Generated/f:ScrollPagerPlugin.debug.js" caret="3464" fromTop="40" />
     </RecentFiles>
     <RecentEdits>
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="9554" fromTop="23" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="9554" fromTop="14" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="9554" fromTop="19" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="9554" fromTop="23" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="9554" fromTop="18" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="9554" fromTop="17" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="9554" fromTop="29" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="9554" fromTop="25" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="9554" fromTop="14" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="9554" fromTop="10" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="9554" fromTop="17" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="9554" fromTop="20" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Shared/f:Site.Master" caret="558" fromTop="9" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="213" fromTop="3" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Shared/f:Site.Master" caret="814" fromTop="11" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Controllers/f:HomeController.cs" caret="153" fromTop="8" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2648" fromTop="16" />
-      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2942" fromTop="19" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="3057" fromTop="16" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="3351" fromTop="19" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="4525" fromTop="16" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2144" fromTop="11" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="1900" fromTop="16" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="1852" fromTop="17" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2637" fromTop="26" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2645" fromTop="24" />
+      <File id="83C3E338-7347-42D7-8F8E-C5C8D4BBE8DB/f:ScrollPagerPlugin.cs" caret="2324" fromTop="6" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2511" fromTop="17" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2278" fromTop="19" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="1625" fromTop="17" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2018" fromTop="14" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2216" fromTop="14" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2439" fromTop="24" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2221" fromTop="21" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="346" fromTop="17" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="1939" fromTop="13" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="346" fromTop="13" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="1880" fromTop="24" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="346" fromTop="8" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="1829" fromTop="19" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="4849" fromTop="17" />
+      <File id="410ED4A3-793B-4368-B4C0-B2677E7D6EEB/d:Views/d:Home/f:Index.aspx" caret="2844" fromTop="28" />
+      <File id="83C3E338-7347-42D7-8F8E-C5C8D4BBE8DB/f:ScrollPagerPlugin.cs" caret="6270" fromTop="10" />
+      <File id="83C3E338-7347-42D7-8F8E-C5C8D4BBE8DB/f:ScrollPagerPlugin.cs" caret="6177" fromTop="10" />
+      <File id="83C3E338-7347-42D7-8F8E-C5C8D4BBE8DB/f:ScrollPagerPlugin.cs" caret="3350" fromTop="19" />
+      <File id="83C3E338-7347-42D7-8F8E-C5C8D4BBE8DB/f:ScrollPagerPlugin.cs" caret="6508" fromTop="11" />
+      <File id="83C3E338-7347-42D7-8F8E-C5C8D4BBE8DB/f:ScrollPagerPlugin.cs" caret="5017" fromTop="26" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -59,6 +71,13 @@
       <Item value="private" priority="0" />
       <Item value="void" priority="0" />
       <Item value="null" priority="0" />
+      <Item value="double" priority="1" />
+      <Item value="Math`0" priority="0" />
+      <Item value="oThumb" priority="1" />
+      <Item value="as" priority="0" />
+      <Item value="Html" priority="0" />
+      <Item value="AnchorElement`0" priority="0" />
+      <Item value="Element`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@Plugins.ResultManager.ResultManager">
       <Item value="SetResultListManager`0" priority="0" />
@@ -73,10 +92,28 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:jQueryApi.jQueryObject">
       <Item value="Plugin`1" priority="0" />
+      <Item value="Position`0" priority="0" />
+      <Item value="Text`0" priority="3" />
+      <Item value="Closest`0" priority="1" />
+      <Item value="GetElement`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:jQueryApi.Templating.jQueryTemplateObject">
       <Item value="CreateTemplate`0" priority="0" />
       <Item value="RenderTemplate`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Math">
+      <Item value="Round`0" priority="0" />
+      <Item value="Floor`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Number">
+      <Item value="ToString`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@jQueryApi.jQuery">
+      <Item value="Select`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Html.Element">
+      <Item value="InnerText" priority="1" />
+      <Item value="TextContent" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>
