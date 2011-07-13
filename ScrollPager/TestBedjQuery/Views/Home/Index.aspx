@@ -90,7 +90,7 @@
 
 		.scrollbar
 		{
-			width:30px;
+			width:25px;
 			float:right;
 			border-left-width:1px;
 			border-left-style: solid;
@@ -133,7 +133,7 @@
 
 		.pageItem
 		{
-			width:100%;
+			width:25px;
 			clear:both; 
 			left:0px;
 			border-bottom-width:1px;
@@ -148,7 +148,7 @@
 			position:absolute;
 			top:0px;
 			left:0px;
-			width:100%;
+			width:23px;
 			border:1px solid #999999;
 			border-radius: 3px;
 			background-color:Grey;
@@ -172,6 +172,30 @@
 			text-decoration:none;
 			font-weight:bold;
 			color:White;
+		}
+
+		.sliderNavigate
+		{	
+			display:inline-block; 
+			width:100%;
+			height:100%;
+			text-align:center;
+			text-decoration:none;
+			font-weight:bold;
+			color:White;
+			z-index:11;
+		}
+
+		.up
+		{
+			top:0px;
+			border-bottom: 1px outset white;
+		}
+
+		.down
+		{
+			bottom:0px;
+			border-top: 1px outset white;
 		}
 
 	</style>
@@ -210,6 +234,29 @@
 			<li>item21</li>
 			<li>item22</li>
 			<li>item23</li>
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+			<li>item4</li>
+			<li>item5</li>
+			<li>item6</li>
+			<li>item7</li>
+			<li>item8</li>
+			<li>item9</li>
+			<li>item10</li>
+			<li>item11</li>
+			<li>item12</li>
+			<li>item13</li>
+			<li>item14</li>
+			<li>item15</li>
+			<li>item16</li>
+			<li>item17</li>
+			<li>item18</li>
+			<li>item19</li>
+			<li>item20</li>
+			<li>item21</li>
+			<li>item22</li>
+			<li>item23</li>
 		</ul>
 		<div class="scrollContainer"></div>
     </div>
@@ -221,7 +268,7 @@
 					currentPage: 1,
 					holder: ".listcontainer",
 					container: "#listcontainerdiv",
-					totalRecords: 23,
+					totalRecords: 46,
 					viewport: "",
 					pageHeight: 200,
 					onPageChanged: function (o, e)

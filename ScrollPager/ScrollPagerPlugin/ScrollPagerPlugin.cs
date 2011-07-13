@@ -22,6 +22,11 @@ public static class ScrollPagerPluginPlugin
 
 		ScrollPagerPluginOptions options =jQuery.ExtendObject<ScrollPagerPluginOptions>(new ScrollPagerPluginOptions(), defaultOptions, customOptions);
 
+		//if (options.totalRecords / options.pageSize > 1)
+		//{
+		//    options.showThumbNavigators = true;
+		//}
+
 		return jQuery.Current.Each(delegate(int i, Element element)
 		                           	{
 		                           		jQueryObject selector = jQuery.This;
@@ -59,18 +64,33 @@ public static class ScrollPagerPluginPlugin
 										{
 											//calculate the slider item height
 											sliderItemHeight = (contHeight / pageCounter);
+											int sliderThumbNavigatorHeight = 10;
+
+											//Define the sliderThumbNavigators
+											jQueryObject sliderThumbNavigate = jQuery.FromHtml("<div><div>");
+											sliderThumbNavigate.AddClass("sliderNavigate");
+											sliderThumbNavigate.CSS("height", sliderThumbNavigatorHeight + "px");
+											
+											jQueryObject sliderThumbNavigateUp = sliderThumbNavigate.Clone(true);
+											sliderThumbNavigateUp.AddClass("up");
+											sliderThumbNavigateUp.Text("U");
+
+											jQueryObject sliderThumbNavigateDown = sliderThumbNavigate.Clone(true);
+											sliderThumbNavigateDown.AddClass("down");
+											sliderThumbNavigateDown.Text("D");
+											
 
 											//Build pager navigation
-											string pageNav = "<UL class=scrollbar sizcache='4' sizset='13'>";
+											jQueryObject pageNav = jQuery.FromHtml("<ul class=scrollbar sizcache='4' sizset='13'></ul>");
 											for (i = 1; i <= pageCounter; i++)
 											{
 												if (i == options.currentPage)
 												{
-													pageNav += "<LI class='currentPage pageItem' sizcache='4' sizset='13'><A class='sliderPage' href='#' rel='" + i + "'></A>";
+													pageNav.Append("<LI class='currentPage pageItem' sizcache='4' sizset='13'><A class='sliderPage' href='#' rel='" + i + "'></A>");
 												}
 												else
 												{
-													pageNav += "<LI class='pageNav" + i + " pageItem' sizcache='4' sizset='14'><A class='sliderPage' href='#' rel='" + i + "'></A>";
+													pageNav.Append("<LI class='pageNav" + i + " pageItem' sizcache='4' sizset='14'><A class='sliderPage' href='#' rel='" + i + "'></A>");
 												}
 
 											}
@@ -79,9 +99,38 @@ public static class ScrollPagerPluginPlugin
 											//Create slider item 
 											int sliderItemThumbPosition = Math.Round((options.currentPage - 1)*sliderItemHeight);
 											double sliderItemThumbHeight = Math.Round((sliderItemHeight - 3));
-											string sliderItem = "<LI class='thumb' style='top:" + sliderItemThumbPosition + "; height:" + sliderItemThumbHeight + "px;'><span class='sliderThumb' style='line-height:" + sliderItemThumbHeight + "px;' href='#' rel='" + i + "'>" + options.currentPage + "</span>";
-											pageNav += sliderItem;
-											pageNav += "</LI></UL>";
+
+											//If the height of the slide thumb is less than 3 * the height of the navigators then change the height
+											if (options.showThumbNavigators && ((3 * sliderThumbNavigatorHeight) > sliderItemThumbHeight))
+											{
+												sliderItemThumbHeight = (3*sliderThumbNavigatorHeight);
+											}
+
+
+											jQueryObject sliderThumbObject = jQuery.FromHtml("<li></li>");
+											sliderThumbObject.AddClass("thumb");
+											sliderThumbObject.CSS("top", sliderItemThumbPosition.ToString());
+											sliderThumbObject.CSS("height", sliderItemThumbHeight.ToString() + "px");
+
+											jQueryObject sliderThumbBar = jQuery.FromHtml("<div></div>");
+											sliderThumbBar.AddClass("sliderThumb");
+											sliderThumbBar.CSS("line-height", sliderItemThumbHeight.ToString() + "px");
+											sliderThumbBar.Attribute("rel", i.ToString());
+											sliderThumbBar.Text(options.currentPage.ToString());
+
+											//If there is more than one page of data then add navigators
+											if (options.showThumbNavigators)
+											{
+												sliderThumbObject.Append(sliderThumbNavigateUp);
+												sliderThumbObject.Append(sliderThumbBar);
+												sliderThumbObject.Append(sliderThumbNavigateDown);
+											}
+											else
+											{
+												sliderThumbObject.Append(sliderThumbBar);
+											}
+
+											pageNav.Append(sliderThumbObject);
 
 											if (options.holder == "")
 											{
@@ -140,7 +189,16 @@ public static class ScrollPagerPluginPlugin
 											iPosition.Now = Math.Round((candidatePos > maxPos) ? maxPos : candidatePos);
 											candidatePageIndex = Math.Round(iPosition.Now / oThumb.GetHeight());
 											oThumb.CSS("top", iPosition.Now.ToString() + "px");
-											oThumb.Children().First().Text((candidatePageIndex + 1).ToString());
+
+											//If navigators are visible then choose the second child. NB: Going to tidy all this up as this approach is def not BP
+											if (options.showThumbNavigators)
+											{
+												oThumb.Children().First().Next().Text((candidatePageIndex + 1).ToString());
+											}
+											else
+											{
+												oThumb.Children().First().Text((candidatePageIndex + 1).ToString());
+											}
 										};
 
 										jQueryEventHandler end = null; 
@@ -217,6 +275,7 @@ public sealed class ScrollPagerPluginOptions
 	public string viewport = "";
 	public string container = "#listcontainerdiv";
 	public int pageHeight = 0;
+	public bool showThumbNavigators = false;
 	public EventHandler<SelectedPageEventArgs> onPageChanged; //delegate(object o, SelectedPageEventArgs e)
 	                                                          //  	{
 																//		Window.Top.Status = "Selected Page: " + e.selectedPage.ToString();

@@ -40,20 +40,48 @@ $.fn.scrollPagerPlugin = function ScrollPagerPluginPlugin$scrollPagerPlugin(cust
         $('.page' + options.currentPage).show();
         if (pageCounter > 1) {
             sliderItemHeight = (contHeight / pageCounter);
-            var pageNav = "<UL class=scrollbar sizcache='4' sizset='13'>";
+            var sliderThumbNavigatorHeight = 10;
+            var sliderThumbNavigate = $('<div><div>');
+            sliderThumbNavigate.addClass('sliderNavigate');
+            sliderThumbNavigate.css('height', sliderThumbNavigatorHeight + 'px');
+            var sliderThumbNavigateUp = sliderThumbNavigate.clone(true);
+            sliderThumbNavigateUp.addClass('up');
+            sliderThumbNavigateUp.text('U');
+            var sliderThumbNavigateDown = sliderThumbNavigate.clone(true);
+            sliderThumbNavigateDown.addClass('down');
+            sliderThumbNavigateDown.text('D');
+            var pageNav = $("<ul class=scrollbar sizcache='4' sizset='13'></ul>");
             for (i = 1; i <= pageCounter; i++) {
                 if (i === options.currentPage) {
-                    pageNav += "<LI class='currentPage pageItem' sizcache='4' sizset='13'><A class='sliderPage' href='#' rel='" + i + "'></A>";
+                    pageNav.append("<LI class='currentPage pageItem' sizcache='4' sizset='13'><A class='sliderPage' href='#' rel='" + i + "'></A>");
                 }
                 else {
-                    pageNav += "<LI class='pageNav" + i + " pageItem' sizcache='4' sizset='14'><A class='sliderPage' href='#' rel='" + i + "'></A>";
+                    pageNav.append("<LI class='pageNav" + i + " pageItem' sizcache='4' sizset='14'><A class='sliderPage' href='#' rel='" + i + "'></A>");
                 }
             }
             var sliderItemThumbPosition = Math.round((options.currentPage - 1) * sliderItemHeight);
             var sliderItemThumbHeight = Math.round((sliderItemHeight - 3));
-            var sliderItem = "<LI class='thumb' style='top:" + sliderItemThumbPosition + '; height:' + sliderItemThumbHeight + "px;'><span class='sliderThumb' style='line-height:" + sliderItemThumbHeight + "px;' href='#' rel='" + i + "'>" + options.currentPage + '</span>';
-            pageNav += sliderItem;
-            pageNav += '</LI></UL>';
+            if (options.showThumbNavigators && ((3 * sliderThumbNavigatorHeight) > sliderItemThumbHeight)) {
+                sliderItemThumbHeight = (3 * sliderThumbNavigatorHeight);
+            }
+            var sliderThumbObject = $('<li></li>');
+            sliderThumbObject.addClass('thumb');
+            sliderThumbObject.css('top', sliderItemThumbPosition.toString());
+            sliderThumbObject.css('height', sliderItemThumbHeight.toString() + 'px');
+            var sliderThumbBar = $('<div></div>');
+            sliderThumbBar.addClass('sliderThumb');
+            sliderThumbBar.css('line-height', sliderItemThumbHeight.toString() + 'px');
+            sliderThumbBar.attr('rel', i.toString());
+            sliderThumbBar.text(options.currentPage.toString());
+            if (options.showThumbNavigators) {
+                sliderThumbObject.append(sliderThumbNavigateUp);
+                sliderThumbObject.append(sliderThumbBar);
+                sliderThumbObject.append(sliderThumbNavigateDown);
+            }
+            else {
+                sliderThumbObject.append(sliderThumbBar);
+            }
+            pageNav.append(sliderThumbObject);
             if (!options.holder) {
                 selector.after(pageNav);
             }
@@ -87,7 +115,12 @@ $.fn.scrollPagerPlugin = function ScrollPagerPluginPlugin$scrollPagerPlugin(cust
             iPosition.now = Math.round((candidatePos > maxPos) ? maxPos : candidatePos);
             candidatePageIndex = Math.round(iPosition.now / oThumb.height());
             oThumb.css('top', iPosition.now.toString() + 'px');
-            oThumb.children().first().text((candidatePageIndex + 1).toString());
+            if (options.showThumbNavigators) {
+                oThumb.children().first().next().text((candidatePageIndex + 1).toString());
+            }
+            else {
+                oThumb.children().first().text((candidatePageIndex + 1).toString());
+            }
         };
         var end = null;
         end = function(oEvent) {
